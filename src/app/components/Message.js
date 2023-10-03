@@ -1,17 +1,12 @@
-"use client";
-export function Messages({ messages }) {
+export function Message({ msg }) {
   return (
     <>
-      {messages.map((msg) => {
-        return (
-          <div key={msg.id} className="w-full py-4 text-center h-fit">
-            <p>
-              {msg.role !== "user" ? "🤖" : "👩‍💻"}
-              <span className={`pl-4 ${msg.role !== "user" ? "text-yellow-200" : "text-blue-300"}`}>{msg.content}</span>
-            </p>
-          </div>
-        );
-      })}
+      <div className="flex flex-row items-center justify-start w-full max-w-2xl p-4 m-auto text-gray-100 md:gap-6 md:py-8">
+        <span>{msg.role !== "user" ? "🤖" : "👩‍💻"}</span>
+        <p>
+          <span>{msg.content}</span>
+        </p>
+      </div>
     </>
   );
 }

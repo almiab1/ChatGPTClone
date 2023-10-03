@@ -1,27 +1,21 @@
 "use client";
 
 import { useChat } from "ai/react";
-import { Messages } from "@/app/components/Message";
+import { Conversation } from "@/app/components/Conversation";
+import { InputChat } from "@/app/components/InputChat";
 
 export function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
-    <div className="">
+    <div className="grid h-full grid-flow-row grid-rows-6 gap-y-4">
       {/* Array of messages */}
-      <div className="">
-        <Messages messages={messages} />
+      <div className="row-span-6">
+        <Conversation messages={messages} />
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Type something..."
-          className="fixed w-full max-w-xl px-4 py-2 m-auto mb-8 text-sm border border-gray-400 rounded-full shadow-2xl bottom-4"
-          type="text"
-          name="content"
-          value={input}
-          onChange={handleInputChange}
-        />
+      <form onSubmit={handleSubmit} className="flex justify-center row-span-1 mb-4 ">
+        <InputChat input={input} handleInputChange={handleInputChange} />
       </form>
     </div>
   );
