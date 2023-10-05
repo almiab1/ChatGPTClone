@@ -2,10 +2,10 @@
 
 export function InputChat({ input, handleInputChange }) {
   return (
-    <div className="grid w-full max-w-3xl grid-flow-col grid-cols-6 px-2 py-2 text-sm border rounded-lg shadow-lg bg-secondary border-border-input text-text-input">
+    <div className="fixed flex flex-row w-full max-w-3xl px-2 py-2 text-sm border rounded-lg shadow-lg bottom-4 bg-secondary border-border-input text-text-input">
       <input
         placeholder="Send a message"
-        className="w-full col-span-5 mx-4 bg-transparent focus:outline-none"
+        className="flex flex-grow max-w-2xl col-span-5 mx-4 overflow-x-hidden bg-transparent line-clamp-4 focus:outline-none"
         type="text"
         name="content"
         value={input}
